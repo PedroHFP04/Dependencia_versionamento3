@@ -11,8 +11,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Filme filme = new Filme("Vingadores",2010,"Ação");
-        Filme filme2 = new Filme("Batman",2019,"Suspense");
+        Filme filme = new Filme("Vingadores",2010,"Ação","Carlos Alberto");
+        Filme filme2 = new Filme("Batman",2019,"Suspense", "Rodrigo pereira");
+
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
