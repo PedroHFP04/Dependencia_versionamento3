@@ -11,9 +11,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Filme filme = new Filme("Vingadores 3",2010,"Ação","Carlos Alberto");
-        Filme filme2 = new Filme("Batman",2019,"Suspense", "Rodrigo pereira");
-
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -21,7 +18,8 @@ public class Main {
 
         String json = gson.toJson(filmes);
 
-        try(FileWriter fw = new FileWriter("filmes.json")) {
+        try {
+            FileWriter fw = new FileWriter("filmes.json");
             fw.write(json);
             System.out.println("Arquivo filmes criado com sucesso!");
         }
