@@ -25,7 +25,7 @@ public class FilmeTeste {
     @Test
     public void testeGenero() {
         Filme filme = new Filme("titulo", 2000, "genero", "diretor");
-        assertEquals("diretor", filme.getGenero());
+        assertEquals("genero", filme.getGenero());
     }
     @Test
     public void testeDiretor() {

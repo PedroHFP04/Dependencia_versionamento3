@@ -2,13 +2,17 @@ package br.inatel.test;
 
 import br.inatel.Filme;
 import br.inatel.ListaFilmes;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class ListaFilmesTeste {
+
 
     @Test // teste que verifica se a lista é criada quando se cria o primeiro filme
     public void testeListaFilmeExiste() {
@@ -33,6 +37,7 @@ public class ListaFilmesTeste {
 
     @Test // testa se o titulo criado é igual ao adicionado na lista
     public void testeFilmeTitulo(){
+        ListaFilmes.limparListaFilmes();
         Filme filme = new Filme("Matrix", 1999, "Ficção", "Wachowski");
         assertEquals("Matrix", ListaFilmes.getFilmes().get(0).getTitulo());
     }
@@ -64,6 +69,7 @@ public class ListaFilmesTeste {
 
     @Test // testa se a lista inicia vazia
     public void testListaIniciaVazia() {
+        ListaFilmes.limparListaFilmes();
         assertTrue(ListaFilmes.getFilmes().isEmpty());
     }
 
@@ -74,8 +80,9 @@ public class ListaFilmesTeste {
 
     @Test // testa a ordem de insercao na lista
     public void testOrdemDeInsercao() {
-        ListaFilmes.getFilmes().add(new Filme("A", 2000, "Gen1", "Dir1"));
-        ListaFilmes.getFilmes().add(new Filme("B", 2001, "Gen2", "Dir2"));
+        ListaFilmes.limparListaFilmes();
+        new Filme("A", 2000, "Gen1", "Dir1");
+        new Filme("B", 2001, "Gen2", "Dir2");
 
         assertEquals("A", ListaFilmes.getFilmes().get(0).getTitulo());
         assertEquals("B", ListaFilmes.getFilmes().get(1).getTitulo());

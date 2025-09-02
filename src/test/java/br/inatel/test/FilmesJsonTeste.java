@@ -3,6 +3,7 @@ package br.inatel.test;
 import br.inatel.Filme;
 import br.inatel.FilmesJson;
 import br.inatel.ListaFilmes;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
@@ -12,6 +13,11 @@ import java.nio.file.Files;
 import static org.junit.Assert.*;
 
 public class FilmesJsonTeste {
+
+    @Before
+    public void limparLista() {
+        ListaFilmes.getFilmes().clear();
+    }
 
     @Test // testa se eu consigo criar um arquivo em json com a minha lista de filmes
     public void testeArquivoJson(){
