@@ -69,3 +69,10 @@ salva.
 - Testa a veracidade das informações passadas quando um filme é criado
 - Garante que a lista de filmes funcione conforme o esperado
 ------------------------------------------------------------------------
+
+## 📉 Regressão e Correção
+
+Durante o desenvolvimento, foi introduzida uma **regressão** quando o código foi modificado em dupla.  
+Essa alteração quebrou parte da funcionalidade do sistema, resultando em falhas nos testes automatizados.  
+
+A correção foi feita revertendo o código ao estado funcional anterior e garantindo que todos os testes voltassem a passar. 
