@@ -30,7 +30,7 @@ public class Filme {
     }
 
     public String getTitulo() {
-        return null;
+        return titulo;
     }
 
     public int getAno() {
