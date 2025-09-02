@@ -1,12 +1,4 @@
 package br.inatel;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Filme {
@@ -14,33 +6,13 @@ public class Filme {
     private int ano;
     private String genero;
     private String diretor;
-    private static List<Filme> filmes = new ArrayList<>();
-    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public Filme( String titulo, int ano, String genero, String diretor) {
         this.titulo = titulo;
         this.ano = ano;
         this.genero = genero;
         this.diretor = diretor;
-        filmes.add(this);
-    }
-
-    public static List<Filme> getFilmes() {
-        return filmes;
-    }
-
-    public void salvarFilmesEmJson(List<Filme> filmes, String nomeArquivo) {
-        String json = gson.toJson(filmes);
-
-        try (FileWriter fw = new FileWriter(nomeArquivo)) {
-            fw.write(json);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void addFilme(Filme filme) {
-        filmes.add(filme);
+        ListaFilmes.addFilmeLista(this);
     }
 
     public void CriarFilme() {
@@ -57,5 +29,19 @@ public class Filme {
         Filme filme = new Filme(titulo, ano, genero, diretor);
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public int getAno() {
+        return ano;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public String getDiretor() {
+        return diretor;
+    }
 }
